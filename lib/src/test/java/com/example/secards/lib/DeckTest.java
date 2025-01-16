@@ -80,4 +80,4 @@ public class DeckTest {
             assertEquals(i, deck.size());
         }
     }
- }
+}
