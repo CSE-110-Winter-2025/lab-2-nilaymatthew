@@ -70,6 +70,7 @@ public class DeckTest {
 
     @Test
     public void size() {
+        // Testing with decks from size 0 - 10
         for (int i = 0; i <= 10; i++) {
             List<Flashcard> cards = new ArrayList<>();
             for (int j = 0; j < i; j++) {
