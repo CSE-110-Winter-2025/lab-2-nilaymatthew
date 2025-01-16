@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean isShowingFront = true;
     private Deck deck = PlaceholderData.DECK;
 
+    private TextView flashcardSizeText;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setContentView(binding.getRoot());
+
+        flashcardSizeText = findViewById(R.id.flashcard_size);
+        updateFlashcardSize();
+
     }
 
     private void updateCardText() {
@@ -53,5 +59,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             binding.cardText.setText(deck.top().back());
         }
+    }
+
+    private void updateFlashcardSize() {
+        String formattedText = getString(R.string.flashcard_size, deck.size());
+        flashcardSizeText.setText(formattedText);
     }
 }
