@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeckTest {
@@ -66,4 +67,17 @@ public class DeckTest {
         // Verify cards are not in the same order
         assertNotEquals(deck, shuffledDeck);
     }
-}
+
+    @Test
+    public void size() {
+        for (int i = 0; i <= 10; i++) {
+            List<Flashcard> cards = new ArrayList<>();
+            for (int j = 0; j < i; j++) {
+                cards.add(new Flashcard("Question" + j, "Answer" + j));
+            }
+
+            var deck = new Deck(cards);
+            assertEquals(i, deck.size());
+        }
+    }
+ }
